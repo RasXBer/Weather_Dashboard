@@ -1,0 +1,224 @@
+/* Reset default margin and padding */
+
+:root {
+    --background1: #5372f0;
+    --background2: #6c757d;
+    --font-color: #fff;
+    --c-background: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #e3f2fd;
+}
+
+h1{
+    /* color: #fff; */
+    color: var(--font-color);
+    padding: 18px 0;
+    text-align: center;
+    font-size: 1.75rem;
+    /* background: #5372f0; */
+    background: var(--background1);
+    
+}
+
+.container{
+    display: flex;
+    gap: 35px;
+    padding: 30px;
+}
+
+.weather-input input {
+  width: 100%;  
+  height: 46px;
+  outline: none;
+  padding: 0 17px;
+  margin: 10px 0 20px 0;
+  font-size: 1.07rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.weather-input {
+    width: 550px;
+}
+
+.weather-input button{
+width: 100%;
+padding: 10px 0;
+cursor: pointer;
+outline: none;
+border: none;
+color: var(--font-color);
+border-radius: 4px;
+font-size: 1rem;
+background: var(--background1);
+}
+
+.weather-input .location-btn {
+    background: var(--background2);
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.weather-input .separator{
+    height: 1px;
+    width: 100%;
+    background: #bbb;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-input .separator::before{
+    content: "";
+    color: var(--background2);
+    font-size: 1.18rem;
+    padding: 0 15px;
+    margin-top: -4px;
+    background: #e3f2fd;
+}
+
+.weather-data {
+    width: 100%;
+}
+
+.current-weather {
+    background: var(--background1);
+    color: var(--font-color);
+    padding: 20px 70px 20px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.current-weather h2 {
+font-size: 1.7rem;
+}
+
+.weather-data h4 {
+    margin-top: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.current-weather .icon {
+max-width: 120px;
+margin-top: -15px;
+}
+
+.current-weather .icon h4 {
+    margin-top: -10px;
+    text-transform: capitalize;
+}
+
+.days-forecast h2{
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.weather-cards{
+    display: flex;
+    gap: 20px;
+}
+
+.weather-cards .card{
+    list-style: none;
+    color: var(--font-color);
+    background: var(--background2);  
+    padding: 18px 16px;
+    border-radius: 5px;
+    width: calc(100%/5);
+}
+
+@media (max-width: 750px){
+    .container {
+        flex-wrap:wrap;
+        padding: 15px;
+    }
+}
+    
+
+.weather-cards .card img {
+    max-width: 70px;
+    margin: 5px 0 -12px 0;
+
+}
+
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 5px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Style for current weather section */
+#current-weather {
+    text-align: center;
+}
+
+/* Style for forecast section */
+#forecast {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    #forecast {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 
