@@ -153,53 +153,6 @@ margin-top: -15px;
 
 }
 
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 10px;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-input[type="text"] {
-    padding: 5px;
-    margin-right: 10px;
-}
-
-button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 20px;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-}
-
 /* Style for current weather section */
 #current-weather {
     text-align: center;

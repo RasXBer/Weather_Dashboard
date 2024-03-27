@@ -31,7 +31,7 @@ const createWeatherCard =(cityName, weatherItem, index) => {
 }
 
 const getWeatherDetails= (cityName, lat, lon) => {
-    // const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&cnt={cnt}&appid=${apiKey}`;
+   
 
     fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`)
     .then(response => response.json())
@@ -89,14 +89,8 @@ const getCityCoordinates =() => {
     // if city name is empty
     if(!cityName) return;
 
-    // const GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
-
-    // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
-
     // get city coordinates from the API response
     fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&liimt=1&appid=${apiKey}`)
-
-    // fetch (`https://api.openweathermap.org/geo/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}`)
         .then(response => response.json())
         .then(data => {
 // console.log(data)
@@ -110,7 +104,6 @@ getWeatherDetails(name, lat, lon );
 
 searchButton.addEventListener("click", getCityCoordinates);
 
-// ----------------------------------------------------------------------------------------------------------------------------
 const searchForm = document.getElementById('search-form');
 // const cityInput = document.getElementById('city-input');
 const currentWeatherSection = document.getElementById('current-weather');
@@ -119,73 +112,3 @@ const forecastSection = document.getElementById('forecast');
 
 
 
-
-// searchForm.addEventListener('submit', (e) => {
-//     e.preventDefault();
-//     const city = cityInput.value;
-    
-//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`)
-//     // fetch (`https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={apiKey}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             // Update current weather section with data
-//             currentWeatherSection.innerHTML = `
-//                 <h2>${data.name}</h2>
-//                 <p>Temperature: ${data.main.temp} °C</p>
-//                 <p>Weather: ${data.weather[0].description}</p>
-//             `;
-
-//         const weatherDataString = JSON.stringify(data);
-//         // // Store the weather data in localStorage with a key
-//         localStorage.setItem("data", weatherDataString);
-//         })
-//         .catch(error => console.error('Error fetching weather data:', error));
-
-          
-//     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`)
-//         .then(response => response.json())
-//         .then(data => {
-//             // Update forecast section with data
-//             forecastSection.innerHTML = '';
-//             data.list.forEach(item => {
-//                 forecastSection.innerHTML += `
-//                     <div>
-//                         <p>Date: ${item.dt_txt}</p>
-//                         <p>Temperature: ${item.main.temp} °C</p>
-//                         <p>Weather: ${item.weather[0].description}</p>
-//                     </div>
-//                 `;
-//             });
-//         })
-//         .catch(error => console.error('Error fetching forecast data:', error));
-// });
-
-
-
-// // const searchForm = document.getElementById('searchForm');
-// // const cityInput = document.getElementById('cityInput');
-// // const weatherInfo = document.getElementById('weatherInfo');
-// // const searchHistory = document.getElementById('searchHistory');
-
-// // searchForm.addEventListener('submit', function(event) {
-// //     event.preventDefault();
-// //     const city = cityInput.value;
-// //     // Call a function to fetch weather data for the city
-// //     // Update the UI with the weather information
-// //     // Add the city to search history
-// // });
-
-// // // Function to fetch weather data from an API
-// // function fetchWeatherData(city) {
-// //     // Make API request to get weather data for the city
-// // }
-
-// // // Function to update UI with weather information
-// // function updateWeatherInfo(weatherData) {
-// //     // Display current and future weather conditions
-// // }
-
-// // // Function to add city to search history
-// // function addToSearchHistory(city) {
-// //     // Add the city to the search history list
-// // }
